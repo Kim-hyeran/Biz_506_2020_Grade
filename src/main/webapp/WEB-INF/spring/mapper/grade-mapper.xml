@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace = "com.biz.grade.mapper.GradeDao">
+  	<insert id="insert" parameterType="gradeVO">
+  		INSERT INTO tbl_grade (
+  			g_number,
+  			g_name,
+  			g_kor,
+  			g_eng,
+  			g_math
+  		) VALUES (
+  			#{g_number},
+  			#{g_name},
+  			#{g_kor},
+  			#{g_eng},
+  			#{g_math}
+  		)
+  	</insert>
+  	
+  	<update id="update" parameterType="gradeVO">
+  		UPDATE tbl_grade SET
+  			g_name = #{g_name},
+  			g_kor = #{g_kor},
+  			g_eng = #{g_eng},
+  			g_math = #{g_math}
+  		WHERE g_number = #{g_number}
+  	</update>
+  </mapper>
